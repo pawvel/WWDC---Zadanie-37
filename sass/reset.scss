@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: sans-serif;
+  background: #ffffff;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}

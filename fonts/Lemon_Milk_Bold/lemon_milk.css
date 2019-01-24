@@ -1,0 +1,10 @@
+﻿/* @font-face kit by Fonts2u (https://fonts2u.com) */
+@font-face {
+  font-family: "Lemon/Milk Bold";
+  src: url("LemonMilkbold.eot?") format("eot"),
+    url("LemonMilkbold.woff") format("woff"),
+    url("LemonMilkbold.ttf") format("truetype"),
+    url("LemonMilkbold.svg#LemonMilkbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
