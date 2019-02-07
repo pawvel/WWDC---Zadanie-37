@@ -15,7 +15,6 @@ body {
 
 section {
   position: relative;
-  overflow: hidden;
 }
 
 li {
@@ -24,6 +23,7 @@ li {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 .wrapper {

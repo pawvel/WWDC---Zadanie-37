@@ -19,10 +19,27 @@ $grey: #494949; /*headers*/
 $darkGrey: #242424; /*buttons*/
 $bordo: #bc2e3a; /*triangles & buttons background*/
 $lightGreyBGR: #f5f5f5;
+$red: #ff0000;
 /*#endregion*/
 
 body {
   scroll-behavior: smooth;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.on-top {
+  z-index: 1;
+}
+
+.relative {
+  position: relative;
 }
 
 .flex-col {
@@ -41,6 +58,10 @@ body {
 
 .lightGreyBGR {
   background-color: $lightGreyBGR;
+}
+
+.active {
+  border-color: $bordo !important;
 }
 
 /*#region SINGLE ELEMENTS */
@@ -112,7 +133,7 @@ body {
         text-transform: uppercase;
         margin-right: 20px;
         &:hover {
-          color: red;
+          color: $red;
         }
       }
     }
@@ -121,8 +142,11 @@ body {
   img {
     margin: 0 10px;
   }
-}
 
+  a:hover {
+    transform: scale(1.1);
+  }
+}
 /*#endregion*/
 
 /*#region HEADER */
@@ -179,13 +203,12 @@ header {
     max-height: 100%;
   }
 }
-
 /*#endregion*/
 
 /*#region WHO WE ARE */
 .WhoWeAre {
   display: flex;
-  padding: 60px 0;
+  padding: 80px 0;
 
   p {
     margin-top: 40px;
@@ -199,24 +222,11 @@ header {
     flex: 60%;
   }
 }
-
-.triangle-WhoWeAre {
-  position: absolute;
-  top: -5%;
-  left: 35%;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 600px 600px 0 600px;
-  border-color: $black transparent transparent transparent;
-}
 /*#endregion */
 
 /*#region WHAT WE DO */
-
 .WhatWeDo {
-  padding: 60px 0;
+  padding: 80px 0;
 
   h1 {
     text-align: center;
@@ -260,6 +270,392 @@ header {
   color: $lightGrey;
   margin-left: 20px;
 }
+/*#endregion */
+
+/*#region HOW WE WORKS */
+.HowWeWorks {
+  padding: 80px 0;
+
+  .section-center {
+    display: flex;
+    margin-top: 40px;
+
+    p {
+      max-width: 300px;
+    }
+
+    .process-images {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 80px;
+      width: 100%;
+
+      .image-wrapper {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        transform: skew(-25deg) translateX(-20px);
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 30px 0 rgba(80, 80, 80, 0.2);
+
+        .image-shade {
+          position: absolute;
+          width: 300px;
+          bottom: -50px;
+          left: -35px;
+          z-index: 2;
+          color: $white;
+          background: rgba(0, 0, 0, 0.5);
+          transition: transform 0.5s ease-in-out;
+        }
+
+        .shade-hide {
+          transform: skew(25deg);
+        }
+
+        .shade-show {
+          transform: skew(25deg) translate(25px, -100px);
+        }
+
+        h6 {
+          font-family: $fontLato;
+          font-weight: 700;
+          font-size: 1.5em;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        p {
+          font-family: $fontOpenSans;
+          font-size: 0.75em;
+          text-align: center;
+          padding: 0 80px;
+        }
+
+        img {
+          transform: skew(25deg) translate(-25px);
+          width: 300px;
+          height: 300px;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+/*#endregion*/
+
+/*#region OUR CREATIVE TEAM */
+.OurCreativeTeam {
+  padding: 80px 0;
+  height: 700px;
+
+  h1 {
+    text-align: center;
+  }
+
+  h5 {
+    font-family: $fontOpenSans;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: $white;
+    text-align: center;
+    transform: skew(-45deg);
+    line-height: 40px;
+  }
+
+  h6 {
+    font-family: $fontOpenSans;
+    font-size: 1.188em;
+    color: $white;
+    font-style: italic;
+    text-align: center;
+    transform: skew(-45deg);
+  }
+
+  .team-carousel {
+    margin-top: 100px;
+    position: relative;
+    height: 100%;
+  }
+
+  .team-img-wrapper {
+    width: 300px;
+    height: 300px;
+    border: solid 15px $white;
+    overflow: hidden;
+    transform: rotate(45deg);
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.5);
+
+    .team-img {
+      width: 400px;
+      height: 400px;
+      transform: rotate(-45deg) translateY(-100px);
+    }
+  }
+
+  .team-name-wrapper {
+    background-color: $black;
+    transform: skew(45deg) translateX(-50%);
+    width: 250px;
+    position: absolute;
+    left: 50%;
+  }
+
+  .team-job-wrapper {
+    background-color: $bordo;
+    transform: skew(45deg) translateX(-65%) translateY(38px);
+    width: 180px;
+    position: absolute;
+    left: 50%;
+    transition: all 0.5s ease-in-out;
+  }
+
+  /*#region Carousel */
+  .carousel {
+    transition: all 0.5s ease-in-out;
+  }
+  .top {
+    position: absolute;
+    z-index: 11;
+    left: 400px;
+  }
+
+  .left {
+    position: absolute;
+    z-index: 10;
+    left: 100px;
+    opacity: 0.6;
+    transform: scale(0.7);
+  }
+
+  .right {
+    position: absolute;
+    z-index: 10;
+    left: 700px;
+    opacity: 0.6;
+    transform: scale(0.7);
+  }
+
+  .back {
+    position: absolute;
+    z-index: 10;
+    left: 400px;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .carousel-arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 19%;
+
+    .arrow-left {
+      cursor: pointer;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 50px 50px 0;
+      border-color: transparent $darkGrey transparent transparent;
+    }
+
+    .arrow-right {
+      cursor: pointer;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 0 50px 50px;
+      border-color: transparent transparent transparent $darkGrey;
+    }
+  }
+  /*#endregion*/
+}
+
+/*#endregion*/
+
+/*#region WHAT CLIENTS SAY */
+.WhatClientsSay {
+  padding: 80px 0 180px 0;
+
+  .clients-wrapper {
+    display: flex;
+    margin-top: 100px;
+
+    .clients-img-wrapper {
+      width: 300px;
+      height: 300px;
+      transform: rotate(45deg);
+      border: solid 15px $white;
+      overflow: hidden;
+      box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.5);
+      position: relative;
+      margin-left: 100px;
+
+      .client-img {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        transform: rotate(-45deg) translateY(-100px);
+      }
+    }
+
+    .clients-right {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-left: 150px;
+      width: 600px;
+      position: relative;
+
+      .citat {
+        display: flex;
+        position: absolute;
+
+        img {
+          width: 75px;
+          height: 55px;
+        }
+
+        .citat-text {
+          font-family: $fontOpenSans;
+          color: $lightGrey;
+          margin-top: 10px;
+          margin-left: 20px;
+
+          p {
+            font-size: 1.25em;
+            font-style: italic;
+          }
+
+          h6 {
+            font-size: 1.125em;
+            font-weight: 700;
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .clients-miniature {
+        display: flex;
+        justify-content: space-between;
+        width: 450px;
+        transform: translateY(250px);
+
+        .miniature-wrapper {
+          cursor: pointer;
+          width: 100px;
+          height: 100px;
+          transform: rotate(45deg);
+          overflow: hidden;
+          border: solid 5px;
+          border-color: $white;
+          box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.75);
+
+          img {
+            width: 150px;
+            height: 150px;
+            transform: rotate(-45deg) translateY(-50px);
+          }
+        }
+      }
+    }
+  }
+}
+/*#endregion*/
+
+/*#region CONTACT - FOOTER*/
+
+footer {
+  background-image: url("../images/sitting-people.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+
+.GetInTouch {
+  padding: 80px 0 40px 0;
+  font-family: $fontOpenSans;
+  color: $white;
+
+  h1 {
+    text-align: center;
+  }
+
+  .contact-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 30px;
+
+    .contact {
+      display: flex;
+
+      img {
+        height: 50%;
+        margin-top: 10px;
+      }
+
+      .contact-text {
+        margin-left: 20px;
+
+        h6 {
+          font-size: 1.375em;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 1.063em;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  .icons-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      width: 500px;
+
+      a:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    hr {
+      margin: 20px 0;
+      width: 800px;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+/*#endregion*/
+
+/*#region TRIANGLES */
+.triangle-WhoWeAre {
+  position: absolute;
+  top: -5%;
+  left: 35%;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 600px 600px 0 600px;
+  border-color: $black transparent transparent transparent;
+}
 
 .triangle-WhatWeDo {
   position: absolute;
@@ -271,4 +667,49 @@ header {
   border-width: 100px 0 100px 100px;
   border-color: transparent transparent transparent $bordo;
 }
-/*#endregion */
+
+.triangle-HowWeWorks-left {
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 120px 0 120px 120px;
+  border-color: transparent transparent transparent $black;
+}
+
+.triangle-HowWeWorks-right {
+  position: absolute;
+  top: -30%;
+  right: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 500px 500px 500px 0;
+  border-color: transparent $bordo transparent transparent;
+}
+
+.triangle-WhatClientsSay-left {
+  position: absolute;
+  top: -5%;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 450px 0 450px 450px;
+  border-color: transparent transparent transparent $bordo;
+}
+
+.triangle-WhatClientsSay-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 300px 300px 0;
+  border-color: transparent $black transparent transparent;
+}
+/*#endregion*/
