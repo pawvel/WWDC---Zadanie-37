@@ -1,23 +1,19 @@
 @import "reset";
 
-/*#region FONTS */
-$fontLato: "Lato", sans-serif; /*navbar & buttons*/
-$fontLemonMilkBold: "Lemon/Milk Bold", sans-serif; /*slogan*/
-$fontOpenSans: "Open Sans", sans-serif; /*paragraphs*/
-$fontPeaceSans: "PeaceSans", sans-serif; /*section headers*/
-/*#endregion*/
-
 /*#region FONT SIZES */
-
+$fontLato: "Lato", sans-serif;
+$fontLemonMilkBold: "Lemon/Milk Bold", sans-serif;
+$fontOpenSans: "Open Sans", sans-serif;
+$fontPeaceSans: "PeaceSans", sans-serif;
 /*#endregion*/
 
 /*#region COLORS */
 $white: #ffffff;
 $black: #000000;
-$lightGrey: #6a6a6a; /*paragraphs*/
-$grey: #494949; /*headers*/
-$darkGrey: #242424; /*buttons*/
-$bordo: #bc2e3a; /*triangles & buttons background*/
+$lightGrey: #6a6a6a;
+$grey: #494949;
+$darkGrey: #242424;
+$bordo: #bc2e3a;
 $lightGreyBGR: #f5f5f5;
 $red: #ff0000;
 /*#endregion*/
@@ -67,6 +63,7 @@ body {
 /*#region SINGLE ELEMENTS */
 
 /* READ MORE BUTTON */
+
 .read-more-btn {
   text-transform: uppercase;
   color: $white;
@@ -85,6 +82,7 @@ body {
 }
 
 /* SECTION HEADER */
+
 .section-header {
   font-family: $fontPeaceSans;
   font-size: 3.875em;
@@ -93,6 +91,7 @@ body {
 }
 
 /* SECTION PARAGRAPH */
+
 .section-text {
   font-family: $fontOpenSans;
   font-size: 1.063em;
@@ -136,11 +135,13 @@ body {
     #toggle {
       display: none;
     }
+
     .menu {
       float: right;
 
       ul {
         display: flex;
+
         li {
           a {
             text-decoration: none;
@@ -171,6 +172,7 @@ body {
 /*#endregion*/
 
 /*#region HEADER */
+
 header {
   background-image: url("../images/city-red__desktop.jpg");
   background-position: center;
@@ -206,20 +208,10 @@ header {
   button {
     position: absolute;
     left: 28%;
-    text-transform: uppercase;
     color: $darkGrey;
     background-color: $white;
-    width: 200px;
-    height: 50px;
-    font-size: 1.25em;
-    font-family: $fontLato;
-    font-weight: bold;
-    border-radius: 25px;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
+
   img {
     position: absolute;
     top: 10%;
@@ -230,6 +222,7 @@ header {
 /*#endregion*/
 
 /*#region WHO WE ARE */
+
 .WhoWeAre {
   display: flex;
   padding: 80px 0;
@@ -249,6 +242,7 @@ header {
 /*#endregion */
 
 /*#region WHAT WE DO */
+
 .WhatWeDo {
   padding: 80px 0;
 
@@ -297,6 +291,7 @@ header {
 /*#endregion */
 
 /*#region HOW WE WORKS */
+
 .HowWeWorks {
   padding: 80px 0;
 
@@ -370,6 +365,7 @@ header {
 /*#endregion*/
 
 /*#region OUR CREATIVE TEAM */
+
 .OurCreativeTeam {
   padding: 80px 0;
   height: 700px;
@@ -439,6 +435,7 @@ header {
   .carousel {
     transition: all 0.5s ease-in-out;
   }
+
   .top {
     position: absolute;
     z-index: 11;
@@ -496,10 +493,10 @@ header {
   }
   /*#endregion*/
 }
-
 /*#endregion*/
 
 /*#region WHAT CLIENTS SAY */
+
 .WhatClientsSay {
   padding: 80px 0 180px 0;
 
@@ -587,6 +584,7 @@ header {
     }
   }
 }
+
 /*#endregion*/
 
 /*#region CONTACT - FOOTER*/
@@ -595,6 +593,7 @@ footer {
   background-image: url("../images/sitting-people.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   width: 100%;
 }
 
@@ -647,6 +646,7 @@ footer {
 
     .icons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       width: 500px;
 
@@ -665,10 +665,10 @@ footer {
     }
   }
 }
-
 /*#endregion*/
 
 /*#region TRIANGLES */
+
 .triangle-WhoWeAre {
   position: absolute;
   top: -5%;
@@ -740,6 +740,7 @@ footer {
 /*#endregion*/
 
 /*#region MEDIA QUERIES */
+
 @media only screen and (max-width: 980px) {
   /*#region NAVBAR*/
   .navbar {
@@ -756,7 +757,6 @@ footer {
 
         ul {
           flex-direction: column;
-
           transition: all 5s ease-in-out;
           align-items: center;
           width: 100%;
@@ -774,6 +774,14 @@ footer {
     }
   }
   /*#endregion*/
+
+  /*#region WHAT CLIENTS SAYS*/
+  .WhatClientsSay {
+    .clients-img-wrapper {
+      display: none;
+    }
+  }
+  /*#endregion*/
 }
 
 @media only screen and (max-width: 768px) {
@@ -786,33 +794,39 @@ footer {
   }
 
   /*#region HEADER BANNER*/
-  .banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    .banner-slogan {
-      padding-top: 20px;
-      max-width: 100%;
+  header {
+    background-size: cover;
 
-      h1 {
-        font-size: 7em;
+    .banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .banner-slogan {
+        padding-top: 20px;
+        max-width: 100%;
+
+        h1 {
+          font-size: 7em;
+        }
+
+        h2 {
+          font-size: 5em;
+        }
       }
 
-      h2 {
-        font-size: 5em;
+      img {
+        position: relative;
+        top: -5%;
+        right: 0;
       }
-    }
-    img {
-      position: relative;
-      top: -5%;
-      right: 0;
-    }
-    button {
-      position: relative;
-      top: -5%;
-      left: 0;
-      margin: 0;
+
+      button {
+        position: relative;
+        top: -5%;
+        left: 0;
+      }
     }
   }
   /*#endregion*/
@@ -833,6 +847,7 @@ footer {
   .HowWeWorks {
     .flex-col {
       align-items: center;
+
       .section-center {
         flex-direction: column;
         align-items: center;
@@ -840,9 +855,11 @@ footer {
         p {
           max-width: 100%;
         }
+
         .section-text {
           width: 80%;
         }
+
         .process-images {
           transform: scale(0.8);
           margin: 10px 0 0 0;
@@ -855,33 +872,40 @@ footer {
   /*#region OUR CREATIVE TEAM */
   .OurCreativeTeam {
     height: 550px;
+
     .team-carousel {
       margin: 10px;
-    }
-    .top {
-      transform: scale(0.7);
-      left: 180px;
-    }
-    .left {
-      transform: scale(0.35);
-      left: 0px;
-    }
-    .right {
-      transform: scale(0.35);
-      left: 350px;
-    }
-    .back {
-      transform: scale(0.25);
-      left: 200px;
-    }
 
-    .carousel-arrows {
-      top: 23%;
-      .arrow-left {
-        border-width: 25px 25px 25px 0;
+      .top {
+        transform: scale(0.7);
+        left: 180px;
       }
-      .arrow-right {
-        border-width: 25px 0 25px 25px;
+
+      .left {
+        transform: scale(0.35);
+        left: 0px;
+      }
+
+      .right {
+        transform: scale(0.35);
+        left: 350px;
+      }
+
+      .back {
+        transform: scale(0.25);
+        left: 180px;
+      }
+
+      .carousel-arrows {
+        top: 23%;
+
+        .arrow-left {
+          border-width: 25px 25px 25px 0;
+        }
+
+        .arrow-right {
+          border-width: 25px 0 25px 25px;
+        }
       }
     }
   }
@@ -891,18 +915,16 @@ footer {
   #clients {
     height: 600px;
   }
+
   .WhatClientsSay {
     height: 100%;
     align-items: center;
+
     .clients-wrapper {
       margin-top: 20px;
       height: 100%;
       display: flex;
       justify-content: center;
-
-      .clients-img-wrapper {
-        display: none;
-      }
 
       .clients-right {
         margin: 0;
@@ -914,6 +936,10 @@ footer {
 
           .citat-text {
             margin: 0;
+
+            h6 {
+              margin-left: 20px;
+            }
           }
         }
 
@@ -940,17 +966,51 @@ footer {
         margin-top: 10px;
       }
     }
+
+    .icons-wrapper {
+      hr {
+        width: 700px;
+      }
+    }
   }
   /*#endregion*/
 
   /*#region TRIANGLES */
-  .triangle-WhoWeAre,
-  .triangle-WhatWeDo,
-  .triangle-HowWeWorks-left,
-  .triangle-HowWeWorks-right,
-  .triangle-WhatClientsSay-left,
+
+  .triangle-WhoWeAre {
+    top: -5%;
+    left: auto;
+    right: -40%;
+    border-width: 300px 300px 0 300px;
+  }
+
+  .triangle-WhatWeDo {
+    top: 35%;
+    z-index: 1;
+    border-width: 50px 0 50px 50px;
+  }
+
+  .triangle-HowWeWorks-left {
+    bottom: -18%;
+    left: 0;
+    border-width: 120px 0 120px 120px;
+  }
+
+  .triangle-HowWeWorks-right {
+    top: 20%;
+    right: 0;
+    border-width: 250px 250px 250px 0;
+  }
+
+  .triangle-WhatClientsSay-left {
+    top: 40%;
+    border-width: 200px 0 200px 200px;
+  }
+
   .triangle-WhatClientsSay-right {
-    display: none;
+    top: 0;
+    right: 0;
+    border-width: 0 200px 200px 0;
   }
   /*#endregion*/
 }
@@ -959,10 +1019,21 @@ footer {
   .wrapper {
     padding: 0 20px;
   }
+
+  .section-header {
+    font-size: 2.5em;
+  }
+
+  .section-text {
+    font-size: 0.8em;
+  }
+
   .read-more-btn {
+    font-size: 1em;
     width: 150px;
     height: 40px;
   }
+
   /*#region NAVBAR*/
   .navbar {
     line-height: 40px;
@@ -975,29 +1046,185 @@ footer {
   /*#endregion*/
 
   /*#region HEADER BANNER*/
-  .banner {
-    .banner-slogan {
-      padding-top: 100px;
-      h1 {
-        font-size: 4em;
+  #home {
+    .banner {
+      .banner-slogan {
+        padding-top: 50px;
+
+        h1 {
+          font-size: 4em;
+        }
+
+        h2 {
+          font-size: 2.5em;
+        }
       }
 
-      h2 {
-        font-size: 2em;
+      img {
+        height: 60%;
+        top: 0;
+      }
+
+      button {
+        top: 0;
+        margin-top: 0;
+      }
+    }
+  }
+  /*#endregion*/
+
+  /*#region WHO WE ARE*/
+  .WhoWeAre {
+    padding: 40px 0;
+
+    .flex-row {
+      .text-wrapper {
+        margin: 20px 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  /*#endregion*/
+
+  /*#region WHAT WE DO*/
+  .WhatWeDo {
+    padding: 40px 0;
+
+    .list-img {
+      width: 45px;
+      height: 45px;
+
+      img {
+        transform: translate(-50%, -50%) scale(0.6);
       }
     }
 
-    img {
-      height: 50%;
-      top: 0;
+    .service-header {
+      font-size: 1.5em;
+    }
+  }
+  /*#endregion*/
+
+  /*#region HOW WE WORKS*/
+  .HowWeWorks {
+    padding: 40px 0;
+
+    .flex-col {
+      .section-center {
+        width: 100%;
+
+        .process-images {
+          flex-direction: column;
+          position: relative;
+          left: 20%;
+        }
+      }
+    }
+  }
+  /*#endregion*/
+
+  /*#region OUR CREATIVE TEAM*/
+  .OurCreativeTeam {
+    padding: 40px 0;
+    .team-carousel {
+      margin: 0;
+      .top {
+        transform: scale(0.5);
+        left: 10px;
+      }
+
+      .left {
+        transform: scale(0.25);
+        left: -100px;
+      }
+
+      .right {
+        transform: scale(0.25);
+        left: 110px;
+      }
+
+      .back {
+        transform: scale(0.15);
+        left: 10px;
+      }
+
+      .carousel-arrows {
+        top: auto;
+        bottom: 30%;
+        justify-content: space-around;
+      }
+    }
+  }
+  /*#endregion*/
+
+  /*#region WHAT CLIENTS SAY*/
+  .WhatClientsSay {
+    padding: 40px 0 80px 0;
+    .clients-wrapper {
+      .clients-right {
+        width: 100%;
+
+        .citat {
+          .citat-text {
+            p {
+              font-size: 1.1em;
+            }
+          }
+        }
+
+        .clients-miniature {
+          width: 100%;
+          transform: translateY(250px);
+
+          .miniature-wrapper {
+            transform: scale(0.7) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  /*#endregion*/
+
+  /*#REGION CONTACT - FOOTER*/
+  .GetInTouch {
+    padding: 40px 0;
+    .contact-wrapper {
+      flex-direction: column;
+      .contact {
+        img {
+          display: none;
+        }
+      }
     }
 
-    button {
-      width: 150px;
-      height: 40px;
-      font-size: 1em;
-      top: 0;
+    .icons-wrapper {
+      margin-top: 40px;
+      .icons {
+        width: 100%;
+        justify-content: space-evenly;
+      }
+      hr {
+        width: 320px;
+      }
+
+      p {
+        font-size: 0.7em;
+      }
     }
+  }
+  /*#endregion*/
+
+  /*#region TRIANGLES */
+  .triangle-WhoWeAre,
+  .triangle-WhatWeDo,
+  .triangle-HowWeWorks-left,
+  .triangle-HowWeWorks-right,
+  .triangle-WhatClientsSay-left,
+  .triangle-WhatClientsSay-right {
+    display: none;
   }
   /*#endregion*/
 }
