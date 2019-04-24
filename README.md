@@ -9,4 +9,4 @@ This is a simple Single-Page Application make in desktop-first strategy.
 * JavaScript
 
 #### Live preview:
-https://pawvel.github.io/WebDev-Challenge-37/
+https://pawvel.github.io/WebDev-Challenge-37
