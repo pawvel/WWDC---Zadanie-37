@@ -7,4 +7,6 @@ This is a simple Single-Page Application make in desktop-first strategy.
 * HTML
 * CSS
 * JavaScript
+
 #### Live preview
+https://pawvel.github.io/WebDev-Challenge-37/
